@@ -9,16 +9,14 @@ import androidx.room.Update;
 import com.example.bdroom24.entities.Usuario;
 import com.example.searchcy.Model.Cidade;
 
-import Model.Cidade;
-
 import java.util.List;
 
 @Dao
 public interface CidadeDao {
-    @Query("SELECT * FROM city WHERE id=idCity LIMIT 1")
+    @Query("SELECT * FROM cidade WHERE id=:idCity LIMIT 1")
     Cidade getUser(int idCity);
 
-    @Query("SELECT * FROM city")
+    @Query("SELECT * FROM cidade")
     List<Cidade> getAll();
 
     @Insert

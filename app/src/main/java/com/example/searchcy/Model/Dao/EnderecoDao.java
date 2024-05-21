@@ -5,12 +5,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-
 import com.example.bdroom24.entities.Usuario;
 import com.example.searchcy.Model.Endereco;
-
-import Model.Endereco;
-
 import java.util.List;
 
 @Dao
