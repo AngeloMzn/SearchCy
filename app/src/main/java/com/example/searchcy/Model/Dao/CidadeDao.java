@@ -5,8 +5,6 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-
-import com.example.bdroom24.entities.Usuario;
 import com.example.searchcy.Model.Cidade;
 
 import java.util.List;
