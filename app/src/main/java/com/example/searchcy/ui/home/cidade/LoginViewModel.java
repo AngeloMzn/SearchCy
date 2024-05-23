@@ -1,16 +1,16 @@
-package com.example.searchcy.ui.home.registrar;
+package com.example.searchcy.ui.home.cidade;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class RegistrarViewModel extends ViewModel {
+public class LoginViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public RegistrarViewModel() {
+    public LoginViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is dashboard fragment");
     }
 
     public LiveData<String> getText() {

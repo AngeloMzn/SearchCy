@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.searchcy.ui.home.login.LoginFragment"
+        android:name="com.example.searchcy.ui.home.cidade.LoginFragment"
         android:label="@string/title_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_cidade" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.searchcy.ui.home.registrar.RegistrarFragment"
+        android:name="com.example.searchcy.ui.home.usuarios.RegistrarFragment"
         android:label="@string/title_registrar"
-        tools:layout="@layout/fragment_registrar" />
+        tools:layout="@layout/fragment_usuarios" />
 </navigation>

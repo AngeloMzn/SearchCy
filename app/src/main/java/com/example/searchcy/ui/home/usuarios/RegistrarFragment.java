@@ -1,4 +1,4 @@
-package com.example.searchcy.ui.home.registrar;
+package com.example.searchcy.ui.home.usuarios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,18 +8,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import com.example.searchcy.databinding.FragmentRegistrarBinding;
+import com.example.searchcy.databinding.FragmentUsuariosBinding;
 
 public class RegistrarFragment extends Fragment {
 
-private FragmentRegistrarBinding binding;
+private FragmentUsuariosBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         RegistrarViewModel registrarViewModel =
                 new ViewModelProvider(this).get(RegistrarViewModel.class);
 
-    binding = FragmentRegistrarBinding.inflate(inflater, container, false);
+    binding = FragmentUsuariosBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;

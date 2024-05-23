@@ -1,16 +1,16 @@
-package com.example.searchcy.ui.home.login;
+package com.example.searchcy.ui.home.usuarios;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class LoginViewModel extends ViewModel {
+public class RegistrarViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public LoginViewModel() {
+    public RegistrarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is notifications fragment");
     }
 
     public LiveData<String> getText() {
