@@ -15,10 +15,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.example.searchcy.ui.main.login.LoginFragment;
 import com.example.searchcy.ui.main.registrar.RegistarFragment;
+
 import com.example.searchcy.R;
 import com.example.searchcy.databinding.ActivityMainBinding;
-import com.example.searchcy.ui.main.login.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
 
