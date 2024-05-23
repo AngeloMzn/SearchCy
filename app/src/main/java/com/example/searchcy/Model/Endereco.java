@@ -4,7 +4,7 @@ package com.example.searchcy.Model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-
+@Entity
 public class Endereco {
     @PrimaryKey(autoGenerate = true)
     int id;
