@@ -21,7 +21,7 @@ public class LoginFragment extends Fragment {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textviewSecond;
+        final TextView textView = binding.edtxtPassword;
         loginViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
