@@ -17,7 +17,7 @@ public interface UsuarioDao {
     @Query("SELECT * FROM Usuario")
     List<Usuario> getAll();
 
-    @Query("SELECT * FROM usuario WHERE login like :userLogin")
+    @Query("SELECT * FROM usuario WHERE nome like :userLogin")
     Usuario getUserByLogin(String userLogin);
 
     @Insert

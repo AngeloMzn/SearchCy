@@ -29,11 +29,11 @@ public class Usuario {
         this.id = id;    
     }
     
-    public String getLogin() {
+    public String getNome() {
         return nome;
     }
     
-    public void setLogin(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
     

@@ -4,14 +4,14 @@ package com.example.searchcy.Model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-
+@Entity
 public class Endereco {
     @PrimaryKey(autoGenerate = true)
     int id;
-    String description;
+    String descricao;
     double latitude;
     double longitude;
-    int cityId;
+    int cidadeId;
 
     public Endereco(){}
 
@@ -23,12 +23,12 @@ public class Endereco {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public double getLatitude() {
@@ -47,12 +47,12 @@ public class Endereco {
         this.longitude = longitude;
     }
 
-    public int getCityId() {
-        return cityId;
+    public int getCidadeId() {
+        return cidadeId;
     }
 
-    public void setCidadeId(int cityId) {
-        this.cityId = cityId;
+    public void setCidadeId(int cidadeId) {
+        this.cidadeId = cidadeId;
     }
 
 }

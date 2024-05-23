@@ -13,7 +13,7 @@ public interface EnderecoDao {
     @Query("SELECT * FROM endereco WHERE id=:idAddress LIMIT 1")
     Endereco getAddress(int idAddress);
 
-    @Query("SELECT * FROM Usuario")
+    @Query("SELECT * FROM endereco")
     List<Endereco> getAll();
 
     @Insert

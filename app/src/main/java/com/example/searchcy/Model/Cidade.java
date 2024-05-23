@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey;
 public class Cidade{
     @PrimaryKey(autoGenerate = true)
     int id;
-    String city;
-    String state;
+    String cidade;
+    String estado;
 
     public Cidade(){}
     public int getId(){
@@ -17,21 +17,21 @@ public class Cidade{
     public void setId(int id){
         this.id = id;
     }
-    public String getCity(){
-        return city;
+    public String getCidade(){
+        return cidade;
     }
-    public void setCity(String city){
-        this.city = city;
+    public void setCidade(String cidade){
+        this.cidade = cidade;
     }
-    public String getState(){
-        return state;
+    public String getEstado(){
+        return estado;
     }
-    public void setState(String state){
-        this.state = state;
+    public void setEstado(String estado){
+        this.estado = estado;
     }
     @Override
     public String toString(){
-        return id + ": " + city + ", estado:" + state;
+        return id + ": " + cidade + ", estado:" + estado;
     }
 
 }
