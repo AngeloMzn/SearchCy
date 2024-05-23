@@ -1,4 +1,4 @@
-package com.example.searchcy.ui.login;
+package com.example.searchcy.ui.home.login;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

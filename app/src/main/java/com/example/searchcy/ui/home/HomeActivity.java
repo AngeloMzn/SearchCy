@@ -1,24 +1,30 @@
-package com.example.searchcy;
+package com.example.searchcy.ui.home;
 
 import android.os.Bundle;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import com.example.searchcy.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
 
-private ActivityMainBinding binding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import com.example.searchcy.R;
+import com.example.searchcy.databinding.ActivityHomeBinding;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class HomeActivity extends AppCompatActivity {
+    private ActivityHomeBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     binding = ActivityMainBinding.inflate(getLayoutInflater());
-     setContentView(binding.getRoot());
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -30,5 +36,4 @@ private ActivityMainBinding binding;
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
-
 }

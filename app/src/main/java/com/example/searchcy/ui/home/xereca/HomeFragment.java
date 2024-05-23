@@ -1,4 +1,4 @@
-package com.example.searchcy.ui.home;
+package com.example.searchcy.ui.home.xereca;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

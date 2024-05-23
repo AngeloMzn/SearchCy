@@ -6,13 +6,13 @@
     <data>
         <variable
             name="loginViewModel"
-            type="com.example.searchcy.ui.login.LoginViewModel" />
+            type="com.example.searchcy.ui.home.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.login.LoginFragment">
+        tools:context=".ui.home.login.LoginFragment">
 
         <TextView
             android:id="@+id/textDashboard"

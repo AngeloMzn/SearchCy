@@ -1,4 +1,4 @@
-package com.example.searchcy.ui.registrar;
+package com.example.searchcy.ui.home.registrar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
