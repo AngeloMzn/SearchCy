@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    tools:context=".ui.main.MainFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -15,15 +15,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_login"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="464dp"
+            android:layout_marginTop="300dp"
             android:background="@drawable/background_button"
             android:text="@string/title_login" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_register"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@drawable/background_button"
             android:text="@string/title_registrar"
