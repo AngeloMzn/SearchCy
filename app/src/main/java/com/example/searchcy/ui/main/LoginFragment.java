@@ -11,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.searchcy.R;
 import com.example.searchcy.databinding.FragmentLoginBinding;
-import com.example.searchcy.databinding.FragmentSecondBinding;
+
 
 public class LoginFragment extends Fragment {
 
@@ -31,7 +31,7 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.textDashboard.setOnClickListener(v ->
+        binding.textviewSecond.setOnClickListener(v ->
                 NavHostFragment.findNavController(LoginFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment)
         );

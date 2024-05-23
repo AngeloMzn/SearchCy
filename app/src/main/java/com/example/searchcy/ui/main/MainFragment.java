@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.searchcy.R;
-import com.example.searchcy.databinding.FragmentFirstBinding;
+import com.example.searchcy.databinding.FragmentMainBinding;
 
 public class MainFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentMainBinding binding;
 
     @Override
     public View onCreateView(
@@ -22,7 +22,7 @@ public class MainFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentMainBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
