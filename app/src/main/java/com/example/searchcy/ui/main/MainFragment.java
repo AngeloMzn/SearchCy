@@ -30,10 +30,7 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonFirst.setOnClickListener(v ->
-                NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
-        );
+
     }
 
     @Override
