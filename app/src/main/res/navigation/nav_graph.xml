@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.searchcy.ui.main.LoginFragment"
+        android:name="com.example.searchcy.ui.main.login.LoginFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_login">
 

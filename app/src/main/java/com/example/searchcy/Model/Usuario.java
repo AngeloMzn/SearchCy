@@ -7,11 +7,19 @@ import androidx.room.PrimaryKey;
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
     int id;
-    String login;
+    String nome;
     String email;
     String password;
 
-    public Usuario(){}
+    public Usuario(){
+
+    }
+
+    public Usuario(String nome, String email, String password) {
+        this.nome = nome;
+        this.email = email;
+        this.password = password;
+    }
 
     public int getId() {
         return id;    
@@ -22,11 +30,11 @@ public class Usuario {
     }
     
     public String getLogin() {
-        return login;    
+        return nome;
     }
     
-    public void setLogin(String login) {
-        this.login = login;    
+    public void setLogin(String nome) {
+        this.nome = nome;
     }
     
     public String getEmail() {
@@ -48,7 +56,7 @@ public class Usuario {
     
     @Override
     public String toString() {
-        return id +": " + login + ", email=" + email;
+        return id +": " + nome + ", email=" + email;
     }
     
 }

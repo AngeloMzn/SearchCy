@@ -1,4 +1,4 @@
-package com.example.searchcy.ui.main;
+package com.example.searchcy.ui.main.login;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
