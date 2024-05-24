@@ -1,5 +1,8 @@
 package com.example.searchcy.ui.main.resgistrar;
 
+import android.app.Application;
+import android.content.Context;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -17,7 +20,8 @@ public class RegistrarViewModel extends ViewModel {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }
-    public void registrarUsuario(Usuario usuario){
+    public void registrarUsuario(Usuario usuario, Application context) {
+        repository = new UserRepository(context);
         repository.inserirUsuario(usuario);
     }
     public LiveData<String> getText() {

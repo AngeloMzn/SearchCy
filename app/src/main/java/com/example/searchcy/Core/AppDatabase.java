@@ -12,15 +12,25 @@ import com.example.searchcy.Model.Dao.EnderecoDao;
 import com.example.searchcy.Model.Dao.UsuarioDao;
 import com.example.searchcy.Model.Endereco;
 import com.example.searchcy.Model.Usuario;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Database(entities = {Usuario.class, Cidade.class, Endereco.class},version = 1)
 public abstract class AppDatabase extends RoomDatabase{
-    private static AppDatabase INSTANCE;
-    public static AppDatabase getDatabase(Context context){
-        if(INSTANCE==null){
-            INSTANCE= Room.databaseBuilder(context.getApplicationContext(),
-                            AppDatabase.class,"AppDataBase")
-                    .allowMainThreadQueries().build();
+
+    private static volatile AppDatabase INSTANCE;
+    private static final int NUMBER_OF_THREADS = 4;
+    public static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+
+    public static AppDatabase getDatabase(final Context context) {
+        if (INSTANCE == null) {
+            synchronized (AppDatabase.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                                    AppDatabase.class, "UserRepository")
+                            .build();
+                }
+            }
         }
         return INSTANCE;
     }

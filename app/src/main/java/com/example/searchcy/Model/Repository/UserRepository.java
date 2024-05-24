@@ -13,7 +13,10 @@ public class UserRepository {
         usuarioDao = db.usuarioDao();
     }
 
-    public void inserirUsuario(Usuario usuario){
-        usuarioDao.insertAll(usuario);
+    public void inserirUsuario(Usuario usuario) {
+        // Assuming this operation should be done in a background thread
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            usuarioDao.insertAll(usuario);
+        });
     }
 }

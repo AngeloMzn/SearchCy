@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +88,8 @@ public class RegistarFragment extends Fragment {
                 if (util.validateInfo(infoList)) {
                     if(util.validateEmail(email) ){
                         usuario = new Usuario(nome, email, password);
-                        registrarViewModel.registrarUsuario(usuario);
+                        Log.d("sla", "Email do Usuario: " + usuario.getEmail());
+                        registrarViewModel.registrarUsuario(usuario, requireActivity().getApplication());
 
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);
