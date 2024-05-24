@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import com.example.searchcy.Core.Util;
 import com.example.searchcy.Model.Usuario;
 import com.example.searchcy.R;
 import com.example.searchcy.ui.main.MainActivity;
-import com.example.searchcy.ui.main.resgistrar.RegistrarViewModel;
 
 import java.util.ArrayList;
 
@@ -85,10 +83,10 @@ public class RegistarFragment extends Fragment {
                 infoList.add(nome);
 
                 Util util = new Util();
+
                 if (util.validateInfo(infoList)) {
                     if(util.validateEmail(email) ){
                         usuario = new Usuario(nome, email, password);
-                        Log.d("sla", "Email do Usuario: " + usuario.getEmail());
                         registrarViewModel.registrarUsuario(usuario, requireActivity().getApplication());
 
                         Intent intent = new Intent(getActivity(), MainActivity.class);

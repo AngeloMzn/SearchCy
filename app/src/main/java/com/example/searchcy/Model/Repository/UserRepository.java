@@ -19,4 +19,8 @@ public class UserRepository {
             usuarioDao.insertAll(usuario);
         });
     }
+
+    public Usuario listarUsuario(int id){
+        return  usuarioDao.getUser(id);
+    }
 }

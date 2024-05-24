@@ -1,7 +1,6 @@
-package com.example.searchcy.ui.main.resgistrar;
+package com.example.searchcy.ui.main.registrar;
 
 import android.app.Application;
-import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -23,6 +22,11 @@ public class RegistrarViewModel extends ViewModel {
     public void registrarUsuario(Usuario usuario, Application context) {
         repository = new UserRepository(context);
         repository.inserirUsuario(usuario);
+    }
+    public Usuario buscarUsuario(int id, Application context) {
+        repository = new UserRepository(context);
+        return repository.listarUsuario(id);
+
     }
     public LiveData<String> getText() {
         return mText;
