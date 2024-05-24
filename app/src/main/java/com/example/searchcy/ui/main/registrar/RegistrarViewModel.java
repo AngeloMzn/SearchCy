@@ -23,10 +23,9 @@ public class RegistrarViewModel extends ViewModel {
         repository = new UserRepository(context);
         repository.inserirUsuario(usuario);
     }
-    public Usuario buscarUsuario(int id, Application context) {
+    public Usuario buscarUsuarioPeloEmail(String email, Application context) {
         repository = new UserRepository(context);
-        return repository.listarUsuario(id);
-
+        return repository.listarUsuarioPeloEmail(email);
     }
     public LiveData<String> getText() {
         return mText;

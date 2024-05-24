@@ -14,13 +14,18 @@ public class UserRepository {
     }
 
     public void inserirUsuario(Usuario usuario) {
-        // Assuming this operation should be done in a background thread
         AppDatabase.databaseWriteExecutor.execute(() -> {
             usuarioDao.insertAll(usuario);
         });
     }
 
-    public Usuario listarUsuario(int id){
+    public Usuario listarUsuarioPeloId(int id){
         return  usuarioDao.getUser(id);
     }
+
+    public Usuario listarUsuarioPeloEmail(String email){
+        return  usuarioDao.getUserByEmail(email);
+    }
+
 }
+
