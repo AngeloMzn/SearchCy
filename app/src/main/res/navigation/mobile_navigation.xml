@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.searchcy.ui.home.mainHome.HomeFragment"
+        android:name="com.example.searchcy.ui.home.cidade.CidadeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_endereco" >
         <action
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.searchcy.ui.home.cidade.CidadeFragment"
+        android:name="com.example.searchcy.ui.home.endereco.EnderecoFragment"
         android:label="@string/title_login"
         tools:layout="@layout/fragment_cidade" />
 
