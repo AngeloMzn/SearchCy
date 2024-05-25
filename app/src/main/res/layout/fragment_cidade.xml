@@ -5,14 +5,14 @@
 
     <data>
         <variable
-            name="loginViewModel"
-            type="com.example.searchcy.ui.home.cidade.LoginViewModel" />
+            name="cidadeViewModel"
+            type="com.example.searchcy.ui.home.cidade.CidadeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.cidade.LoginFragment">
+        tools:context=".ui.home.cidade.CidadeFragment">
 
         <TextView
             android:id="@+id/textDashboard"

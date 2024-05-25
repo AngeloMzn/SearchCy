@@ -1,6 +1,13 @@
+package com.example.searchcy.ui.main.login;
+
+import android.app.Application;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.searchcy.Model.Repository.UserRepository;
+import com.example.searchcy.Model.Usuario;
 
 public class LoginViewModel extends ViewModel {
 
@@ -16,7 +23,7 @@ public class LoginViewModel extends ViewModel {
     }
 
     public Usuario listarUsuarioPeloEmail(String email, Application context) {
-        repository = new UserRepository(context);
+        UserRepository repository = new UserRepository(context);
         return repository.listarUsuarioPeloEmail(email);
     }
 

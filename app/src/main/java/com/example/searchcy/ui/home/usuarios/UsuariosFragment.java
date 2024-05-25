@@ -8,26 +8,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.example.searchcy.databinding.FragmentUsuariosBinding;
 
-public class RegistrarFragment extends Fragment {
 
-private FragmentUsuariosBinding binding;
+public class UsuariosFragment extends Fragment {
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        RegistrarViewModel registrarViewModel =
-                new ViewModelProvider(this).get(RegistrarViewModel.class);
+    private FragmentUsuariosBinding binding;
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        UsuarioViewModel usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
 
-    binding = FragmentUsuariosBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
+        binding = FragmentUsuariosBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        registrarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        usuarioViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
-@Override
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;

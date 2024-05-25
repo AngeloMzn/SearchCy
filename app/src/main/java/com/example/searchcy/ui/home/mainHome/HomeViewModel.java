@@ -1,4 +1,4 @@
-package com.example.searchcy.ui.home.xereca;
+package com.example.searchcy.ui.home.mainHome;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

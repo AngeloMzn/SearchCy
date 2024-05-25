@@ -8,21 +8,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.searchcy.databinding.FragmentCidadeBinding;
 import com.example.searchcy.databinding.FragmentLoginBinding;
 
-public class LoginFragment extends Fragment {
+public class CidadeFragment extends Fragment {
 
-    private FragmentLoginBinding binding;
+    private FragmentCidadeBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        LoginViewModel loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+        CidadeViewModel cidadeViewModel = new ViewModelProvider(this).get(CidadeViewModel.class);
 
-        binding = FragmentLoginBinding.inflate(inflater, container, false);
+        binding = FragmentCidadeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.edtxtPassword;
-        loginViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textDashboard;
+        cidadeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
