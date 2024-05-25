@@ -1,5 +1,6 @@
 package com.example.searchcy.ui.main.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,10 +20,12 @@ import com.example.searchcy.Core.Util;
 import com.example.searchcy.Model.Usuario;
 import com.example.searchcy.R;
 import com.example.searchcy.databinding.FragmentLoginBinding;
+import com.example.searchcy.ui.home.HomeActivity;
 import com.example.searchcy.ui.main.login.LoginViewModel;
 import com.example.searchcy.ui.main.registrar.RegistrarViewModel;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class LoginFragment extends Fragment {
@@ -61,8 +66,15 @@ public class LoginFragment extends Fragment {
                     if (util.validateInfo(infoList)) {
                         if(util.validateEmail(email) ){
                             usuario = vmLogin.listarUsuarioPeloEmail(email, requireActivity().getApplication());
-                            if(usuario != null && usuario.getEmail() == email && usuario.getPassword() == password){
+                            Log.i("xereca", "Valor da senha do usuario buscado: " + usuario.getPassword());
+                            Log.i("xereca", "Valor do email digitado: " + email);
+                            Log.i("xereca", "Valor da senha digitada: " + password);
+                            if(usuario != null && Objects.equals(usuario.getEmail(), email) && Objects.equals(usuario.getPassword(), password)){
+
                                 Toast.makeText(getActivity(), "Login realizado com sucesso !", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                                startActivity(intent);
+                                requireActivity().finish();
                             }else{
                                 Toast.makeText(getActivity(), "As credenciais estão incorretas", Toast.LENGTH_SHORT).show();
 
@@ -76,17 +88,17 @@ public class LoginFragment extends Fragment {
                 }
             }
         );
-        return binding.getRoot();
+        return view;
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+    /*public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         binding.edtxtPassword.setOnClickListener(v ->
                 NavHostFragment.findNavController(LoginFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment)
         );
-    }
+    }*/
 
     @Override
     public void onDestroyView() {
