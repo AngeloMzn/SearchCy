@@ -25,7 +25,10 @@
         </activity>
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="false" />
+            android:theme="@style/AppTheme">
+            <!-- Outros atributos da atividade -->
+        </activity>
+
     </application>
 
 </manifest>
