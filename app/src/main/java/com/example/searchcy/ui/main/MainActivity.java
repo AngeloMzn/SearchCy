@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 LoginFragment loginFragment = new LoginFragment();
-                fragmentTransaction.replace(R.id.fragment_container, loginFragment);
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_main, loginFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
