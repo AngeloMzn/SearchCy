@@ -51,11 +51,19 @@ public class CadastrarEnderecoFragment extends Fragment {
         editTextLongitude = root.findViewById(R.id.editTextLongitude);
         spinnerCidade = root.findViewById(R.id.spinnerCidade);
 
-        List<Cidade> cidades = cadastrarEnderecoViewModel.listarCidades();
-        ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, cidades);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        List<Cidade> cidades = cadastrarEnderecoViewModel.listarCidades(requireActivity().getApplication());
+        if(!cidades.isEmpty()){
+            ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, cidades);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerCidade.setAdapter(adapter);
 
-        spinnerCidade.setAdapter(adapter);
+        }else{
+            List<String> nenhumaCidade = new ArrayList<String>();
+            nenhumaCidade.add("Nenhuma cidade encontrada");
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item,nenhumaCidade);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerCidade.setAdapter(adapter);
+        }
 
         btnCadastrarEndereco.setOnClickListener(
                 new View.OnClickListener() {
@@ -79,6 +87,7 @@ public class CadastrarEnderecoFragment extends Fragment {
 
                             Endereco address = new Endereco(descricao, latitude, longitude, cidadeId);
                             cadastrarEnderecoViewModel.registrarEndereco(address, requireActivity().getApplication());
+                            Toast.makeText(getActivity(), "Endereco cadastrado com sucesso !", Toast.LENGTH_SHORT).show();
 
                         }else {
                             Toast.makeText(getActivity(), "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();

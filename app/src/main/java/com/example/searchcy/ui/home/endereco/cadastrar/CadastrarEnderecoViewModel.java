@@ -29,7 +29,8 @@ public class CadastrarEnderecoViewModel extends ViewModel {
         addressRepository.inserirEndereco(endereco);
     }
 
-    public List<Cidade> listarCidades(){
+    public List<Cidade> listarCidades(Application context){
+        cityRepository = new CityRepository(context);
         return cityRepository.listarCidades();
     }
 

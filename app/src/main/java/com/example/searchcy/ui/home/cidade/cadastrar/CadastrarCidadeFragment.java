@@ -60,7 +60,7 @@ public class CadastrarCidadeFragment extends Fragment {
 
                             Cidade city = new Cidade(cidade, estado);
                             cadastrarCidadeViewModel.registrarCidade(city, requireActivity().getApplication());
-
+                            Toast.makeText(getActivity(), "Endereco cadastrado com sucesso !", Toast.LENGTH_SHORT).show();
                         }else {
                             Toast.makeText(getActivity(), "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
                         }
