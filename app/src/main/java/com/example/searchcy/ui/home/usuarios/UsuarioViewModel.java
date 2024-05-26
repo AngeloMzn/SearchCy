@@ -1,20 +1,26 @@
 package com.example.searchcy.ui.home.usuarios;
 
+import android.app.Application;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.searchcy.Model.Repository.UserRepository;
+import com.example.searchcy.Model.Usuario;
+
+import java.util.List;
+
 public class UsuarioViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private UserRepository repository;
 
     public UsuarioViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+
     }
 
-
-    public LiveData<String> getText() {
-        return mText;
+    public List<Usuario> listarUsuarios(Application context){
+        repository = new UserRepository(context);
+        return repository.listarUsuarios();
     }
 }

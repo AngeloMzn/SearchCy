@@ -6,6 +6,8 @@ import com.example.searchcy.Core.AppDatabase;
 import com.example.searchcy.Model.Dao.UsuarioDao;
 import com.example.searchcy.Model.Usuario;
 
+import java.util.List;
+
 public class UserRepository {
     UsuarioDao usuarioDao;
     public UserRepository(Application application){
@@ -27,6 +29,17 @@ public class UserRepository {
         return  usuarioDao.getUserByEmail(email);
     }
 
+    public void atualizarUsuario(Usuario user){
+        usuarioDao.update(user);
+    }
+
+    public void deletarUsuario(Usuario user){
+        usuarioDao.delete(user);
+    }
+
+    public List<Usuario> listarUsuarios(){
+        return usuarioDao.getAll();
+    }
 
 }
 

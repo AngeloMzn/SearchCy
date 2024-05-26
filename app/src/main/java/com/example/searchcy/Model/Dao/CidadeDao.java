@@ -12,7 +12,7 @@ import java.util.List;
 @Dao
 public interface CidadeDao {
     @Query("SELECT * FROM cidade WHERE id=:idCity LIMIT 1")
-    Cidade getUser(int idCity);
+    Cidade listCityById(int idCity);
 
     @Query("SELECT * FROM cidade")
     List<Cidade> getAll();

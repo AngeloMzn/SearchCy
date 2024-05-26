@@ -13,14 +13,10 @@ import java.util.List;
 public interface UsuarioDao {
     @Query("SELECT * FROM Usuario WHERE id=:idUser LIMIT 1")
     Usuario getUser(int idUser);
-
     @Query("SELECT * FROM Usuario")
     List<Usuario> getAll();
-
     @Query("SELECT * FROM usuario WHERE email like :userEmail")
     Usuario getUserByEmail(String userEmail);
-
-
     @Insert
     void insertAll(Usuario user);
     @Update

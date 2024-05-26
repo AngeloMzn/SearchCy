@@ -5,6 +5,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.searchcy.Model.Cidade;
 import com.example.searchcy.Model.Endereco;
 import java.util.List;
 
@@ -15,6 +17,9 @@ public interface EnderecoDao {
 
     @Query("SELECT * FROM endereco")
     List<Endereco> getAll();
+
+    @Query("SELECT * FROM endereco WHERE id=:idAddress LIMIT 1")
+    Endereco listAddressById(int idAddress);
 
     @Insert
     void insertAll(Endereco address);
