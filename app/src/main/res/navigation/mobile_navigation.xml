@@ -16,6 +16,11 @@
         <action
             android:id="@+id/action_navigation_home_to_cadastrarCidadeFragment"
             app:destination="@+id/cadastrarCidadeFragment"/>
+        <action
+            android:id="@+id/action_navigation_home_to_editarCidadeFragment"
+            app:destination="@id/editarCidadeFragment"
+            />
+
     </fragment>
 
     <fragment
@@ -45,4 +50,14 @@
         android:name="com.example.searchcy.ui.home.endereco.cadastrar.CadastrarEnderecoFragment"
         android:label="Cadastrar Endereco"
         tools:layout="@layout/fragment_cadastrar_endereco" />
+    <fragment
+        android:id="@+id/editarEnderecoFragment"
+        android:name="com.example.searchcy.ui.home.endereco.editar.EditarEnderecoFragment"
+        android:label="Editar Endereco"
+        tools:layout="@layout/fragment_editar_endereco" />
+    <fragment
+        android:id="@+id/editarCidadeFragment"
+        android:name="com.example.searchcy.ui.home.cidade.editar.EditarCidadeFragment"
+        android:label="Editar Cidade"
+        tools:layout="@layout/fragment_editar_cidade" />
 </navigation>
