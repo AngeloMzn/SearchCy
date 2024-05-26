@@ -45,6 +45,7 @@ public class CidadeFragment extends Fragment {
         listViewCidade.setAdapter(listViewEnderecoAdapter);
 
 
+
         return root;
     }
 

@@ -15,6 +15,13 @@ public class Endereco {
 
     public Endereco(){}
 
+    public Endereco(String descricao, Double latitude, Double longitude, int cidadeId) {
+        this.descricao = descricao;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.cidadeId = cidadeId;
+    }
+
     public int getId() {
         return id;
     }

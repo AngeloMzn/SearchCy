@@ -11,6 +11,12 @@ public class Cidade{
     String estado;
 
     public Cidade(){}
+
+    public Cidade(String cidade, String estado) {
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+
     public int getId(){
         return id;
     }
