@@ -66,11 +66,11 @@ public class LoginFragment extends Fragment {
                     if (util.validateInfo(infoList)) {
                         if(util.validateEmail(email) ){
                             usuario = vmLogin.listarUsuarioPeloEmail(email, requireActivity().getApplication());
-                            Log.i("xereca", "Valor da senha do usuario buscado: " + usuario.getPassword());
-                            Log.i("xereca", "Valor do email digitado: " + email);
-                            Log.i("xereca", "Valor da senha digitada: " + password);
-                            if(usuario != null && Objects.equals(usuario.getEmail(), email) && Objects.equals(usuario.getPassword(), password)){
 
+                            //Log.i("sla", "Valor da senha do usuario buscado: " + usuario.getPassword());
+                            //Log.i("sla", "Valor do email digitado: " + email);
+                            //Log.i("sla", "Valor da senha digitada: " + password);
+                            if(usuario != null && Objects.equals(usuario.getEmail(), email) && Objects.equals(usuario.getPassword(), password)){
                                 Toast.makeText(getActivity(), "Login realizado com sucesso !", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getActivity(), HomeActivity.class);
                                 startActivity(intent);
