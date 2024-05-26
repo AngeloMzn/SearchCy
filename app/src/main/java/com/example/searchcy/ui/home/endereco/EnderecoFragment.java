@@ -10,11 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.searchcy.Model.Endereco;
 import com.example.searchcy.Model.Usuario;
 import com.example.searchcy.R;
 import com.example.searchcy.databinding.FragmentEnderecoBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +44,15 @@ public class EnderecoFragment extends Fragment {
 
         ArrayAdapter<String> listViewEnderecoAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, descricaoEnderecos);
         listViewEndereco.setAdapter(listViewEnderecoAdapter);
+
+        FloatingActionButton fab = root.findViewById(R.id.floatingActionButtonEndereco);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
+                navController.navigate(R.id.action_navigation_home_to_cadastrarEnderecoFragment);
+            }
+        });
 
         return root;
     }

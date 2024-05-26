@@ -9,21 +9,40 @@
         android:id="@+id/navigation_home"
         android:name="com.example.searchcy.ui.home.cidade.CidadeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_endereco" >
+        tools:layout="@layout/fragment_cidade" >
         <action
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigation_home_to_cadastrarCidadeFragment"
+            app:destination="@+id/cadastrarCidadeFragment"/>
     </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.searchcy.ui.home.endereco.EnderecoFragment"
         android:label="@string/title_login"
-        tools:layout="@layout/fragment_cidade" />
+        tools:layout="@layout/fragment_endereco" >
+        <action
+            android:id="@+id/action_navigation_home_to_cadastrarEnderecoFragment"
+            app:destination="@+id/cadastrarEnderecoFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.searchcy.ui.home.usuarios.UsuariosFragment"
         android:label="@string/title_registrar"
         tools:layout="@layout/fragment_usuarios" />
+
+    <fragment
+        android:id="@+id/cadastrarCidadeFragment"
+        android:name="com.example.searchcy.ui.home.cidade.cadastrar.CadastrarCidadeFragment"
+        android:label="Cadastrar Cidade"
+        tools:layout="@layout/fragment_cadastrar_cidade" />
+
+    <fragment
+        android:id="@+id/cadastrarEnderecoFragment"
+        android:name="com.example.searchcy.ui.home.endereco.cadastrar.CadastrarEnderecoFragment"
+        android:label="Cadastrar Endereco"
+        tools:layout="@layout/fragment_cadastrar_endereco" />
 </navigation>
