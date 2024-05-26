@@ -8,17 +8,6 @@
     tools:context=".ui.home.usuarios.UsuariosFragment" >
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="4dp"
-        android:clickable="true"
-        android:src="@drawable/ic_plus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView2" />
-
     <ListView
         android:id="@+id/listView2"
         android:layout_width="361dp"

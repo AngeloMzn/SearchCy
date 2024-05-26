@@ -22,7 +22,7 @@ public class EnderecoFragment extends Fragment {
         binding = FragmentEnderecoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textViewEndereco;
         enderecoViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
