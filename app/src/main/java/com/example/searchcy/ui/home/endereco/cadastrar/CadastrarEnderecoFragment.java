@@ -47,13 +47,13 @@ public class CadastrarEnderecoFragment extends Fragment {
         View root = binding.getRoot();
         btnCadastrarEndereco = root.findViewById(R.id.btnCadastrarEndereco);
         editTextDescricao = root.findViewById(R.id.editTextDescricao);
-        editTextLatitude = root.findViewById(R.id.editTextState);
+        editTextLatitude = root.findViewById(R.id.editTextLatitude);
         editTextLongitude = root.findViewById(R.id.editTextLongitude);
         spinnerCidade = root.findViewById(R.id.spinnerCidade);
 
         List<Cidade> cidades = cadastrarEnderecoViewModel.listarCidades(requireActivity().getApplication());
         if(!cidades.isEmpty()){
-            ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, cidades);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, getCidadeNomes(cidades));
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerCidade.setAdapter(adapter);
 
@@ -72,29 +72,39 @@ public class CadastrarEnderecoFragment extends Fragment {
                         String descricao = editTextDescricao.getText().toString();
                         Double latitude = Double.parseDouble(editTextLatitude.getText().toString());
                         Double longitude = Double.parseDouble(editTextLongitude.getText().toString());
-                        Cidade cidadeSelecionada = (Cidade) spinnerCidade.getSelectedItem();
-                        int cidadeId = cidadeSelecionada.getId();
+                        String cidadeNome = (String) spinnerCidade.getSelectedItem();
 
-                        ArrayList<Object> infoList = new ArrayList<>();
-                        infoList.add(descricao);
-                        infoList.add(latitude);
-                        infoList.add(longitude);
-                        infoList.add(cidadeId);
+                        Cidade cidadeSelecionada = null;
+                        for (Cidade cidade : cidades) {
+                            if (cidade.getCidade().equals(cidadeNome)) {
+                                cidadeSelecionada = cidade;
+                                break;
+                            }
+                        }
 
-                        Util util = new Util();
+                        if (cidadeSelecionada != null) {
+                            int cidadeId = cidadeSelecionada.getId();
 
-                        if (util.validateInfo(infoList)) {
+                            ArrayList<Object> infoList = new ArrayList<>();
+                            infoList.add(descricao);
+                            infoList.add(latitude);
+                            infoList.add(longitude);
+                            infoList.add(cidadeId);
 
-                            Endereco address = new Endereco(descricao, latitude, longitude, cidadeId);
-                            cadastrarEnderecoViewModel.registrarEndereco(address, requireActivity().getApplication());
-                            Toast.makeText(getActivity(), "Endereco cadastrado com sucesso !", Toast.LENGTH_SHORT).show();
+                            Util util = new Util();
 
-                        }else {
-                            Toast.makeText(getActivity(), "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
+                            if (util.validateInfo(infoList)) {
+
+                                Endereco address = new Endereco(descricao, latitude, longitude, cidadeId);
+                                cadastrarEnderecoViewModel.registrarEndereco(address, requireActivity().getApplication());
+                                Toast.makeText(getActivity(), "Endereco cadastrado com sucesso !", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                Toast.makeText(getActivity(), "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
-                }
-        );
+                });
 
         return root;
     }
@@ -103,6 +113,13 @@ public class CadastrarEnderecoFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+    private List<String> getCidadeNomes(List<Cidade> cidades) {
+        List<String> nomes = new ArrayList<>();
+        for (Cidade cidade : cidades) {
+            nomes.add(cidade.getCidade());
+        }
+        return nomes;
     }
 
 }
