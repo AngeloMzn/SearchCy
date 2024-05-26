@@ -5,24 +5,20 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.searchcy.R;
 import com.example.searchcy.databinding.FragmentCadastrarEnderecoBinding;
-import com.example.searchcy.ui.home.endereco.EnderecoViewModel;
 
-public class CadastrarEndereco extends Fragment {
+public class CadastrarEnderecoFragment extends Fragment {
 
     private CadastrarEnderecoViewModel mViewModel;
 
-    public static CadastrarEndereco newInstance() {
-        return new CadastrarEndereco();
+    public static CadastrarEnderecoFragment newInstance() {
+        return new CadastrarEnderecoFragment();
     }
 
     private FragmentCadastrarEnderecoBinding binding;

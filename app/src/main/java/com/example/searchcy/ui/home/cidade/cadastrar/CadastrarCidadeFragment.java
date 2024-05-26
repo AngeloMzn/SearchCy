@@ -5,23 +5,20 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.searchcy.R;
 import com.example.searchcy.databinding.FragmentCadastrarCidadeBinding;
-import com.example.searchcy.ui.home.cidade.cadastrar.CadastrarCidadeViewModel;
 
-public class CadastrarCidade extends Fragment {
+public class CadastrarCidadeFragment extends Fragment {
 
     private CadastrarCidadeViewModel mViewModel;
     private FragmentCadastrarCidadeBinding binding;
-    public static CadastrarCidade newInstance() {
-        return new CadastrarCidade();
+    public static CadastrarCidadeFragment newInstance() {
+        return new CadastrarCidadeFragment();
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
