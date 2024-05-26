@@ -31,19 +31,35 @@
         <action
             android:id="@+id/action_navigation_home_to_cadastrarEnderecoFragment"
             app:destination="@+id/cadastrarEnderecoFragment"/>
+        <action
+            android:id="@+id/action_navigation_home_to_editarEnderecoFragment"
+            app:destination="@id/editarEnderecoFragment"
+            />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.searchcy.ui.home.usuarios.UsuariosFragment"
         android:label="@string/title_registrar"
-        tools:layout="@layout/fragment_usuarios" />
+        tools:layout="@layout/fragment_usuarios">
+        <action
+            android:id="@+id/action_navigation_home_to_editarUsuarioFragment"
+            app:destination="@id/editarUsuarioFragment"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/cadastrarCidadeFragment"
         android:name="com.example.searchcy.ui.home.cidade.cadastrar.CadastrarCidadeFragment"
         android:label="Cadastrar Cidade"
-        tools:layout="@layout/fragment_cadastrar_cidade" />
+        tools:layout="@layout/fragment_cadastrar_cidade"
+        >
+        <action
+            android:id="@+id/action_navigation_cadastrarCidadeFragment_to_home"
+            app:destination="@id/navigation_home"
+            />
+
+    </fragment>
 
     <fragment
         android:id="@+id/cadastrarEnderecoFragment"
@@ -60,4 +76,10 @@
         android:name="com.example.searchcy.ui.home.cidade.editar.EditarCidadeFragment"
         android:label="Editar Cidade"
         tools:layout="@layout/fragment_editar_cidade" />
+    <fragment
+        android:id="@+id/editarUsuarioFragment"
+        android:name="com.example.searchcy.ui.home.usuarios.editar.EditarUsuarioFragment"
+        android:label="Editar Usuário"
+        tools:layout="@layout/fragment_editar_usuario"
+        />
 </navigation>

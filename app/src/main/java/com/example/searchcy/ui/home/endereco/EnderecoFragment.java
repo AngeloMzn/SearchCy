@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,6 +45,17 @@ public class EnderecoFragment extends Fragment {
 
         ArrayAdapter<String> listViewEnderecoAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, descricaoEnderecos);
         listViewEndereco.setAdapter(listViewEnderecoAdapter);
+
+        listViewEndereco.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Endereco enderecoSelecionado = enderecos.get(position);
+                NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
+                Bundle bundle = new Bundle();
+                bundle.putLong("enderecoId", enderecoSelecionado.getId());
+                navController.navigate(R.id.action_navigation_home_to_editarEnderecoFragment, bundle);
+            }
+        });
 
         FloatingActionButton fab = root.findViewById(R.id.floatingActionButtonEndereco);
         fab.setOnClickListener(new View.OnClickListener() {

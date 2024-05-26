@@ -37,6 +37,7 @@ public class CidadeFragment extends Fragment {
         binding = FragmentCidadeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
         listViewCidade = root.findViewById(R.id.listViewCidade);
         List<String> descricaoCidades = new ArrayList<>();
 
@@ -44,6 +45,7 @@ public class CidadeFragment extends Fragment {
         for (Cidade cidade : cidades) {
             descricaoCidades.add(cidade.getCidade());
         }
+
 
         ArrayAdapter<String> listViewEnderecoAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, descricaoCidades);
         listViewCidade.setAdapter(listViewEnderecoAdapter);

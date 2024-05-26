@@ -89,7 +89,7 @@ public class RegistarFragment extends Fragment {
                     if(util.validateEmail(email) ){
                         usuario = new Usuario(nome, email, password);
                         registrarViewModel.registrarUsuario(usuario, requireActivity().getApplication());
-                        //Log.i("xereca", "Valor da minhaVariavel: " + registrarViewModel.buscarUsuarioPeloEmail(email, requireActivity().getApplication()).getNome());
+                        //Log.i("sla", "Valor da minhaVariavel: " + registrarViewModel.buscarUsuarioPeloEmail(email, requireActivity().getApplication()).getNome());
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);
                     }else{
