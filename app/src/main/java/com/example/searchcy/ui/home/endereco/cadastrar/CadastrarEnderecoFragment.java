@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.searchcy.Core.Util;
 import com.example.searchcy.Model.Cidade;
@@ -98,7 +100,8 @@ public class CadastrarEnderecoFragment extends Fragment {
                                 Endereco address = new Endereco(descricao, latitude, longitude, cidadeId);
                                 cadastrarEnderecoViewModel.registrarEndereco(address, requireActivity().getApplication());
                                 Toast.makeText(getActivity(), "Endereco cadastrado com sucesso !", Toast.LENGTH_SHORT).show();
-
+                                NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
+                                navController.popBackStack();
                             } else {
                                 Toast.makeText(getActivity(), "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
                             }

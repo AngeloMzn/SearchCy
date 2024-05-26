@@ -6,8 +6,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import com.example.searchcy.Core.Util;
 import com.example.searchcy.Model.Cidade;
 import com.example.searchcy.R;
@@ -51,7 +51,7 @@ public class CadastrarCidadeFragment extends Fragment {
                     public void onClick(View v) {
                         String cidade = editTextCity.getText().toString();
                         String estado = editTextState.getText().toString();
-                        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
+
                         ArrayList<Object> infoList = new ArrayList<>();
                         infoList.add(cidade);
                         infoList.add(estado);
@@ -63,8 +63,9 @@ public class CadastrarCidadeFragment extends Fragment {
                             Cidade city = new Cidade(cidade, estado);
                             cadastrarCidadeViewModel.registrarCidade(city, requireActivity().getApplication());
                             Toast.makeText(getActivity(), "Endereco cadastrado com sucesso !", Toast.LENGTH_SHORT).show();
-                            navController.navigate(R.id.action_navigation_cadastrarCidadeFragment_to_home);
 
+                            NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
+                            navController.popBackStack();
                         }else {
                             Toast.makeText(getActivity(), "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
                         }
