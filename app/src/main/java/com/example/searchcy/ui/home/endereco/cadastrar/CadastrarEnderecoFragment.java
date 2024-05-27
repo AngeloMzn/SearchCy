@@ -2,6 +2,8 @@ package com.example.searchcy.ui.home.endereco.cadastrar;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -29,11 +31,14 @@ import java.util.List;
 
 public class CadastrarEnderecoFragment extends Fragment {
 
+    private static final int REQUEST_CODE_MAPS_ACTIVITY = 1;
     private CadastrarEnderecoViewModel mViewModel;
     private EditText editTextDescricao;
     private EditText editTextLatitude;
     private EditText editTextLongitude;
+    private EditText editTextEndereco;
     private Button btnCadastrarEndereco;
+    private  Button bt_pesquisar_endereco;
     private Spinner spinnerCidade;
 
     public static CadastrarEnderecoFragment newInstance() {
@@ -48,6 +53,7 @@ public class CadastrarEnderecoFragment extends Fragment {
         binding = FragmentCadastrarEnderecoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         btnCadastrarEndereco = root.findViewById(R.id.btnCadastrarEndereco);
+        bt_pesquisar_endereco = root.findViewById(R.id.bt_pesquisar_endereco);
         editTextDescricao = root.findViewById(R.id.editTextDescricao);
         editTextLatitude = root.findViewById(R.id.editTextLatitude);
         editTextLongitude = root.findViewById(R.id.editTextLongitude);
@@ -108,6 +114,15 @@ public class CadastrarEnderecoFragment extends Fragment {
                         }
                     }
                 });
+        bt_pesquisar_endereco.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), MapsActivity.class);
+                        startActivityForResult(intent, REQUEST_CODE_MAPS_ACTIVITY);
+                    }
+                }
+        );
 
         return root;
     }
