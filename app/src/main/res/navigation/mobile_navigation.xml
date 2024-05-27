@@ -65,7 +65,14 @@
         android:id="@+id/cadastrarEnderecoFragment"
         android:name="com.example.searchcy.ui.home.endereco.cadastrar.CadastrarEnderecoFragment"
         android:label="Cadastrar Endereco"
-        tools:layout="@layout/fragment_cadastrar_endereco" />
+        tools:layout="@layout/fragment_cadastrar_endereco">
+        <action
+            android:id="@+id/action_navegation_cadastrarEnderecoFragment_to_MapsActivity"
+            app:destination="@+id/pesquisarEndereco"
+            />
+
+    </fragment>
+
     <fragment
         android:id="@+id/editarEnderecoFragment"
         android:name="com.example.searchcy.ui.home.endereco.editar.EditarEnderecoFragment"
@@ -81,5 +88,11 @@
         android:name="com.example.searchcy.ui.home.usuarios.editar.EditarUsuarioFragment"
         android:label="Editar Usuário"
         tools:layout="@layout/fragment_editar_usuario"
+        />
+    <fragment
+        android:id="@+id/pesquisarEndereco"
+        android:name="com.example.searchcy.ui.home.endereco.cadastrar.MapsActivity"
+        android:label="Pesquisar Endereco"
+        tools:layout="@layout/activity_maps"
         />
 </navigation>

@@ -2,6 +2,7 @@ package com.example.searchcy.ui.home.endereco.cadastrar;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,7 @@ public class CadastrarEnderecoFragment extends Fragment {
     private EditText editTextLatitude;
     private EditText editTextLongitude;
     private Button btnCadastrarEndereco;
+    private Button btPesquisarEndereco;
     private Spinner spinnerCidade;
 
     public static CadastrarEnderecoFragment newInstance() {
@@ -48,6 +50,7 @@ public class CadastrarEnderecoFragment extends Fragment {
         binding = FragmentCadastrarEnderecoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         btnCadastrarEndereco = root.findViewById(R.id.btnCadastrarEndereco);
+        btPesquisarEndereco = root.findViewById(R.id.bt_pesquisar_endereco);
         editTextDescricao = root.findViewById(R.id.editTextDescricao);
         editTextLatitude = root.findViewById(R.id.editTextLatitude);
         editTextLongitude = root.findViewById(R.id.editTextLongitude);
@@ -108,6 +111,16 @@ public class CadastrarEnderecoFragment extends Fragment {
                         }
                     }
                 });
+
+        btPesquisarEndereco.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), MapsActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
 
         return root;
     }
