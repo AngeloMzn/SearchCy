@@ -59,7 +59,6 @@ public class CadastrarCidadeFragment extends Fragment {
                         Util util = new Util();
 
                         if (util.validateInfo(infoList)) {
-
                             Cidade city = new Cidade(cidade, estado);
                             cadastrarCidadeViewModel.registrarCidade(city, requireActivity().getApplication());
                             Toast.makeText(getActivity(), "Endereco cadastrado com sucesso !", Toast.LENGTH_SHORT).show();

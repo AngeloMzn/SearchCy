@@ -52,7 +52,7 @@ public class EnderecoFragment extends Fragment {
                 Endereco enderecoSelecionado = enderecos.get(position);
                 NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
                 Bundle bundle = new Bundle();
-                bundle.putLong("enderecoId", enderecoSelecionado.getId());
+                bundle.putInt("enderecoId", enderecoSelecionado.getId());
                 navController.navigate(R.id.action_navigation_home_to_editarEnderecoFragment, bundle);
             }
         });

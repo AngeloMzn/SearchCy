@@ -109,6 +109,8 @@ public class CadastrarEnderecoFragment extends Fragment {
                     }
                 });
 
+
+
         return root;
     }
 
