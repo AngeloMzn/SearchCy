@@ -2,9 +2,13 @@ package com.example.searchcy.Model;
 
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(foreignKeys = @ForeignKey(entity = Cidade.class,
+        parentColumns = "id",
+        childColumns = "cidadeId",
+        onDelete = ForeignKey.CASCADE))
 public class Endereco {
     @PrimaryKey(autoGenerate = true)
     int id;
